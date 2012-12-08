@@ -1,0 +1,279 @@
+  [1m[36m (17.4ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (19.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20121120030225)
+  [1m[35m (11.2ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `authentication_token` varchar(255), `username` varchar(255), `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (12.4ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (13.9ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36m (15.3ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_authentication_token` ON `users` (`authentication_token`)[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20121120030225')
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 21:30:17 -0600
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 707ms
+
+ActionView::Template::Error ('twitter/bootstrap/labels.less' wasn't found.
+
+  (in /Users/agius/Projects/refectory/app/assets/stylesheets/full_control/index.css.less)):
+    3: <head>
+    4:   <title>Jekyllhub</title>
+    5:   <link rel="icon" type="image/png" href="">
+    6:   <%= stylesheet_link_tag "application", :media => "all" %>
+    7:   <% unless Refectory::Application.assets.find_asset("#{params[:controller]}.css").nil? %>
+    8:     <%= stylesheet_link_tag params[:controller] %>
+    9:   <% end %>
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__581197317004829779_70256783370940'
+  lib/disable_assets_logger.rb:11:in `call'
+
+
+  Rendered /usr/local/Cellar/rbenv/0.3.0/versions/1.9.3-p0/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /usr/local/Cellar/rbenv/0.3.0/versions/1.9.3-p0/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/Cellar/rbenv/0.3.0/versions/1.9.3-p0/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 21:32:55 -0600
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 716ms
+
+ActionView::Template::Error ('twitter/bootstrap/badges.less' wasn't found.
+
+  (in /Users/agius/Projects/refectory/app/assets/stylesheets/full_control/index.css.less)):
+    3: <head>
+    4:   <title>Jekyllhub</title>
+    5:   <link rel="icon" type="image/png" href="">
+    6:   <%= stylesheet_link_tag "application", :media => "all" %>
+    7:   <% unless Refectory::Application.assets.find_asset("#{params[:controller]}.css").nil? %>
+    8:     <%= stylesheet_link_tag params[:controller] %>
+    9:   <% end %>
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__581197317004829779_70256783370940'
+  lib/disable_assets_logger.rb:11:in `call'
+
+
+  Rendered /usr/local/Cellar/rbenv/0.3.0/versions/1.9.3-p0/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.2ms)
+  Rendered /usr/local/Cellar/rbenv/0.3.0/versions/1.9.3-p0/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/Cellar/rbenv/0.3.0/versions/1.9.3-p0/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 21:33:03 -0600
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 861ms
+
+ActionView::Template::Error (wrong number of arguments (2 for 1)):
+    20:   <!-- facebook og images don't work over https :/ -->
+    21:   <meta property="og:image" content="" />
+    22:   <meta property="og:title" content="" />
+    23:   <meta property="og:url" content="<%= url_for(root_path, :only_path => false) %>" />
+    24:   <meta property="og:description" content="" />
+    25:   
+    26:   <%= csrf_meta_tags %>
+  app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb__581197317004829779_70256783370940'
+  lib/disable_assets_logger.rb:11:in `call'
+
+
+  Rendered /usr/local/Cellar/rbenv/0.3.0/versions/1.9.3-p0/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (34.3ms)
+  Rendered /usr/local/Cellar/rbenv/0.3.0/versions/1.9.3-p0/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/Cellar/rbenv/0.3.0/versions/1.9.3-p0/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (39.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 21:33:31 -0600
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 21:33:32 -0600
+Processing by HighVoltage::PagesController#show as */*
+  Parameters: {"id"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 54ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 21:33:41 -0600
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 21:33:43 -0600
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 21:33:43 -0600
+Processing by HighVoltage::PagesController#show as */*
+  Parameters: {"id"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 21:33:57 -0600
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 21:33:57 -0600
+Processing by HighVoltage::PagesController#show as */*
+  Parameters: {"id"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 50ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-11-19 21:34:01 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 39ms (Views: 22.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-11-19 21:34:01 -0600
+Processing by Devise::SessionsController#new as */*
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-11-19 21:34:02 -0600
+Processing by UsersController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered /usr/local/Cellar/rbenv/0.3.0/versions/1.9.3-p0/lib/ruby/gems/1.9.1/gems/devise-2.1.2/app/views/devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 65ms (Views: 64.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-11-19 21:34:03 -0600
+Processing by UsersController#new as */*
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered /usr/local/Cellar/rbenv/0.3.0/versions/1.9.3-p0/lib/ruby/gems/1.9.1/gems/devise-2.1.2/app/views/devise/registrations/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-11-19 21:37:09 -0600
+Processing by UsersController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered /usr/local/Cellar/rbenv/0.3.0/versions/1.9.3-p0/lib/ruby/gems/1.9.1/gems/devise-2.1.2/app/views/devise/registrations/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 9ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-11-19 21:37:09 -0600
+Processing by UsersController#new as */*
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered /usr/local/Cellar/rbenv/0.3.0/versions/1.9.3-p0/lib/ruby/gems/1.9.1/gems/devise-2.1.2/app/views/devise/registrations/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-11-19 21:37:11 -0600
+Processing by UsersController#new as HTML
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered /usr/local/Cellar/rbenv/0.3.0/versions/1.9.3-p0/lib/ruby/gems/1.9.1/gems/devise-2.1.2/app/views/devise/registrations/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 48ms (Views: 47.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-11-19 21:37:12 -0600
+Processing by UsersController#new as */*
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered /usr/local/Cellar/rbenv/0.3.0/versions/1.9.3-p0/lib/ruby/gems/1.9.1/gems/devise-2.1.2/app/views/devise/registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-11-19 21:37:35 -0600
+Processing by UsersController#new as HTML
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-11-19 21:37:35 -0600
+Processing by UsersController#new as */*
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-11-19 21:37:43 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 56ms (Views: 55.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-11-19 21:37:43 -0600
+Processing by Devise::SessionsController#new as */*
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-11-19 21:38:42 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-11-19 21:38:42 -0600
+Processing by Devise::SessionsController#new as */*
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 53ms (Views: 52.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-11-19 21:39:02 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-11-19 21:39:07 -0600
+Processing by UsersController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-11-19 21:39:07 -0600
+Processing by UsersController#new as */*
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (42.8ms)
+Completed 200 OK in 49ms (Views: 48.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2012-11-19 21:39:09 -0600
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2012-11-19 21:39:09 -0600
+Processing by Devise::PasswordsController#new as */*
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 21:39:12 -0600
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 11ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 21:39:12 -0600
+Processing by HighVoltage::PagesController#show as */*
+  Parameters: {"id"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms)

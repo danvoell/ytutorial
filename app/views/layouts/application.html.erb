@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rails-Bootstrap</title>
+  <link rel="icon" type="image/png" href="">
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <% unless Refectory::Application.assets.find_asset("#{params[:controller]}.css").nil? %>
+    <%= stylesheet_link_tag params[:controller] %>
+  <% end %>
+  <%= yield(:stylesheets) %>
+  
+  <%= javascript_include_tag "application" %>
+  <% unless Refectory::Application.assets.find_asset("#{params[:controller]}.js").nil? %>
+    <%= javascript_include_tag params[:controller] %>
+  <% end %>
+  <%= yield(:javascripts) %>
+  
+  <meta property="fb:admins" content="" />
+  <meta property="fb:app_id" content="" />
+  <!-- facebook og images don't work over https :/ -->
+  <meta property="og:image" content="" />
+  <meta property="og:title" content="" />
+  <meta property="og:url" content="<%= root_path :only_path => false %>" />
+  <meta property="og:description" content="" />
+  
+  <%= csrf_meta_tags %>
+  <%= yield(:head) %>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="brand"><%= link_to "Rails-Bootstrap", root_path %></div>
+      <ul class="nav">
+        <% if current_user.present? %>
+          <li><%= link_to "Log out", destroy_user_session_path(:method => "delete") %></li>
+        <% else %>
+          <li><%= link_to "Log in", new_user_session_path %></li>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  
+  <% if flash[:notice] %>
+    <div class="alert alert-info"><%= flash[:notice] %> <button class="close">&times;</button></div>
+  <% end %>
+  
+  <% if flash[:alert] %>
+    <div class="alert alert-error"><%= flash[:alert] %> <button class="close">&times;</button></div>
+  <% end %>
+
+  <%= yield %>
+
+  <footer>
+    <div class="copy">
+      &copy; <%= Time.now.strftime("%Y") %> Rails-bootstrap
+    </div>
+  </footer>
+</div>
+</body>
+</html>

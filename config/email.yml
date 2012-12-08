@@ -1,0 +1,43 @@
+development:
+  mode: smtp
+  asset_host: http://localhost:3000
+  smtp:
+    address: "smtp.gmail.com"
+    port: 587
+    # :domain – If you need to specify a HELO domain, you can do it here.
+    user_name: "admin@refectory"
+    password: "password"
+    authentication: plain
+    enable_starttls_auto: true
+  default_url_options:
+    host: localhost:3000
+
+test:
+  mode: test
+  asset_host: http://localhost:3000
+  smtp:
+    address: "localhost"
+    port: 587
+    # :domain – If you need to specify a HELO domain, you can do it here.
+    user_name: ""
+    password: ""
+    authentication: plain
+    enable_starttls_auto: true
+  default_url_options:
+    host: localhost:3000
+
+
+production:
+  mode: smtp
+  asset_host: refectory
+  smtp:
+    address: "smtp.gmail.com"
+    port: 587
+    # :domain – If you need to specify a HELO domain, you can do it here.
+    user_name: "admin@refectory"
+    password: "password"
+    authentication: plain
+    enable_starttls_auto: true
+  default_url_options:
+    host: refectory
+
