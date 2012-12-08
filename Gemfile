@@ -5,7 +5,7 @@ gem 'rails', '3.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'pg'
 gem 'oj'
 gem 'devise'
 gem 'high_voltage'
@@ -37,9 +37,9 @@ gem 'unicorn'
 gem 'capistrano'
 gem 'capistrano-unicorn'
 
-# group :development do
-#   gem 'ruby-debug19', :require => 'ruby-debug'
-# end
+group :development do
+  # gem 'mysql2psql'
+end
 
 group :test do
   gem "factory_girl_rails", "~> 3.0"
