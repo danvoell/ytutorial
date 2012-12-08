@@ -1,0 +1,12 @@
+<% tutorial = form %>
+<% tutorial ||= @tutorial %>
+
+<%= form_for tutorial do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, :class => "span6" %>
+  
+  <%= f.label :outline %>
+  <%= f.text_area :outline, :size => "50x5", :class => "span6" %>
+  <br />
+  <%= f.button "Submit", :class => "btn" %>
+<% end %>

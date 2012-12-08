@@ -7,6 +7,8 @@ Refectory::Application.routes.draw do
   end
   root :to => 'high_voltage/pages#show', :id => 'home'
   
+  resources :tutorials
+  
   if Rails.env == "development"
     match 'errors/404' => 'errors#error_404'
     match 'errors/500' => 'errors#error_500' 

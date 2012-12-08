@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120030225) do
+ActiveRecord::Schema.define(:version => 20121208202829) do
+
+  create_table "steps", :force => true do |t|
+    t.integer  "tutorial_id"
+    t.text     "content"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "tutorials", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.text     "outline"
+    t.string   "link"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

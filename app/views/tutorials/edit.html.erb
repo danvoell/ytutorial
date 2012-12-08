@@ -1,0 +1,44 @@
+<h1><%= @tutorial.title %></h1>
+<%= form_for @tutorial do |f| %>
+  <div class="row">
+    <div class="span12">
+      <%= f.label :title %>
+      <%= f.text_field :title, :class => "span6" %>
+    
+      <%= f.label :outline %>
+      <%= f.text_area :outline, :size => "50x10", :class => "span6" %>
+    </div>
+  </div>
+
+  <% @tutorial.steps.each do |step| %>
+    <div class="row" data-kind="step">
+      <div class="span12">
+        <h4><a href='#' class="btn btn-mini" data-kind="remove-step">X</a> Step:</h4>
+        <%= f.fields_for step, index: (step.id || 'new') do |s| %>
+          <%= s.label :content %>
+          <%= s.text_area :content, :size => "50x5", :class => "span6" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  
+  <a href='#' class="btn" data-kind="new-step">Add Step</a>
+  <br />
+  
+  <div class="hide" data-kind="new-step">
+    <div class="row" data-kind="step">
+      <div class="span12">
+        <h4><a href='#' class="btn btn-mini" data-kind="remove-step">X</a> Step:</h4>
+        <%= f.fields_for Step.new, index: 'new-step-id' do |s| %>
+          <%= s.label :content %>
+          <%= s.text_area :content, :size => "50x5", :class => "span6" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+  <%= f.button "Save", :class => 'btn btn-large' %>
+<% end %>
+
+<br />
+<%= link_to "Back", tutorials_path %>
