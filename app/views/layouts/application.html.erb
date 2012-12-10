@@ -33,6 +33,7 @@
     <div class="container">
       <div class="brand"><%= link_to "Refectory", root_path %></div>
       <ul class="nav">
+        <li><%= link_to "Tutorials", tutorials_path %></li>
         <% if current_user.present? %>
           <li><%= link_to "Log out", destroy_user_session_path(:method => "delete") %></li>
         <% else %>

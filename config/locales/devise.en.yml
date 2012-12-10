@@ -12,6 +12,9 @@ en:
         other: "%{count} errors prohibited this %{resource} from being saved:"
 
   devise:
+    users:
+      user:
+        signed_up: "Signed up successfully."
     failure:
       already_authenticated: 'You are already signed in.'
       unauthenticated: 'You need to sign in or sign up before continuing.'

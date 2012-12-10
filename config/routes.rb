@@ -5,7 +5,7 @@ Refectory::Application.routes.draw do
     get 'logout', to: "devise/sessions#destroy", as: "logout"
     get 'signup', to: "users#new", as: "signup"
   end
-  root :to => 'high_voltage/pages#show', :id => 'home'
+  root :to => 'tutorials#index'
   
   resources :tutorials
   

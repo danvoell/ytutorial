@@ -10,6 +10,9 @@
  *
  *= require_self
  *= require full_control/index
+ *= require prettify
+ *= require bootstrap-wysihtml5
+ *= require wysiwyg-color
 */
 
 small { font-size: 85%; }

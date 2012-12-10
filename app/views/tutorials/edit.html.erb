@@ -6,17 +6,16 @@
       <%= f.text_field :title, :class => "span6" %>
     
       <%= f.label :outline %>
-      <%= f.text_area :outline, :size => "50x10", :class => "span6" %>
+      <%= f.text_area :outline, :size => "75x10", :class => "span8 wysihtml5" %>
     </div>
   </div>
 
   <% @tutorial.steps.each do |step| %>
     <div class="row" data-kind="step">
       <div class="span12">
-        <h4><a href='#' class="btn btn-mini" data-kind="remove-step">X</a> Step:</h4>
+        <a href='#' class="pull-left remove-step" data-kind="remove-step">X</a> <h4>Step:</h4>
         <%= f.fields_for step, index: (step.id || 'new') do |s| %>
-          <%= s.label :content %>
-          <%= s.text_area :content, :size => "50x5", :class => "span6" %>
+          <%= s.text_area :content, :size => "75x5", :class => "span8 wysihtml5" %>
         <% end %>
       </div>
     </div>
@@ -28,15 +27,14 @@
   <div class="hide" data-kind="new-step">
     <div class="row" data-kind="step">
       <div class="span12">
-        <h4><a href='#' class="btn btn-mini" data-kind="remove-step">X</a> Step:</h4>
+        <a href='#' class="pull-left remove-step" data-kind="remove-step">X</a> <h4> Step:</h4>
         <%= f.fields_for Step.new, index: 'new-step-id' do |s| %>
-          <%= s.label :content %>
-          <%= s.text_area :content, :size => "50x5", :class => "span6" %>
+          <%= s.text_area :content, :size => "75x5", :class => "span8 wysihtml5" %>
         <% end %>
       </div>
     </div>
   </div>
-  
+  <hr />
   <%= f.button "Save", :class => 'btn btn-large' %>
 <% end %>
 

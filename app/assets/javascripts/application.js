@@ -16,6 +16,9 @@
 //= require require.js
 //= require modernizr.js
 //= require spin.min.js
+//= require wysihtml5-0.3.0.min
+//= require bootstrap-wysihtml5
+//= require prettify
 //= require main.js
 
 function get_date(){
