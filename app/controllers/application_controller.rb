@@ -27,8 +27,8 @@ class ApplicationController < ActionController::Base
   end
   
   def log_error(e)
-    Rails.logger.debug(e.inspect)
-    Rails.logger.debug(e.message)
-    Rails.logger.debug(e.backtrace.join("\n"))
+    Rails.logger.error(e.inspect)
+    Rails.logger.error(e.message)
+    Rails.logger.error(e.backtrace.join("\n"))
   end
 end
