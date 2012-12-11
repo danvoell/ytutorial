@@ -10,6 +10,8 @@
  *
  *= require_self
  *= require full_control/index
+ *= require jquery-ui-1.9.2.custom.min
+ *= require jquery.tagit
  *= require prettify
  *= require bootstrap-wysihtml5
  *= require wysiwyg-color

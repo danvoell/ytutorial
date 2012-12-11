@@ -4,6 +4,16 @@
     <div class="span12">
       <%= f.label :title %>
       <%= f.text_field :title, :class => "span6" %>
+      
+      <div class="row">
+        <div class="span8">
+          <%= f.label :tags %>
+          <%= f.text_field :tag_list, value: @tutorial.tags.collect(&:name).join(", "), placeholder: "ruby, solr, sunspot", class: "tagit" %>
+          <span class="help-block">
+            Separate by commas, use double quotes for multi-word tags
+          </span>
+        </div>
+      </div>
     
       <%= f.label :outline %>
       <%= f.text_area :outline, :size => "75x5", :class => "span8 wysihtml5" %>
