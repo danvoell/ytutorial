@@ -12,10 +12,14 @@ $(function(){
   
   $("a[data-kind='new-step']").on("click", function(e){
     e.preventDefault();
+    var count = $("#steps-accordion div[data-kind='step']:last").data("step-count");
+    count += 1;
     var new_step = $("div[data-kind='new-step'] > div[data-kind='step']").first().clone();
-    new_step.html(new_step.html().replace(/new-step-id/g, get_timestamp()));
+    new_step.html(new_step.html().replace(/new-step-id/g, get_timestamp()).replace(/:count:/g, count));
+    new_step.data("step-count", count);
+    new_step.find("textarea").wysihtml5();
     new_step.hide();
-    $(this).before(new_step);
+    $("#steps-accordion").append(new_step);
     new_step.slideDown('fast');
     return false;
   });

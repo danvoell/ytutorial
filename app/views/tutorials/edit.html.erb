@@ -6,34 +6,63 @@
       <%= f.text_field :title, :class => "span6" %>
     
       <%= f.label :outline %>
-      <%= f.text_area :outline, :size => "75x10", :class => "span8 wysihtml5" %>
+      <%= f.text_area :outline, :size => "75x5", :class => "span8 wysihtml5" %>
     </div>
   </div>
-
-  <% @tutorial.steps.each do |step| %>
-    <div class="row" data-kind="step">
-      <div class="span12">
-        <a href='#' class="pull-left remove-step" data-kind="remove-step">X</a> <h4>Step:</h4>
-        <%= f.fields_for step, index: (step.id || 'new') do |s| %>
-          <%= s.text_area :content, :size => "75x5", :class => "span8 wysihtml5" %>
-        <% end %>
+  
+  <h3>Tutorial Steps:</h3>
+  <div class="accordion" id="steps-accordion">
+    
+    <% count = 0 %>
+    <% @tutorial.steps.each do |step| %>
+    
+      <% count += 1 %>
+      <div class="accordion-group" data-kind="step" data-step-count="<%= count %>">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#steps-accordion" href="#step-<%= step.id %>">
+            Step <%= count %>
+          </a>
+        </div>
+      
+        <div id="step-<%= step.id %>" class="accordion-body collapse <%= count == 1 ? 'in' : '' %>">
+          <div class="accordion-inner">
+            <%= f.fields_for step, index: (step.id || 'new') do |s| %>
+              <%= s.text_area :content, :size => "75x20", :class => "span8 wysihtml5" %>
+            <% end %>
+            <br />
+            <a href='#' class="btn btn-danger remove-step" data-kind="remove-step">Remove Step</a>
+            <div class='clearfix'>&nbsp;</div>
+          </div>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+      
+  </div>
   
   <a href='#' class="btn" data-kind="new-step">Add Step</a>
   <br />
   
   <div class="hide" data-kind="new-step">
-    <div class="row" data-kind="step">
-      <div class="span12">
-        <a href='#' class="pull-left remove-step" data-kind="remove-step">X</a> <h4> Step:</h4>
-        <%= f.fields_for Step.new, index: 'new-step-id' do |s| %>
-          <%= s.text_area :content, :size => "75x5", :class => "span8 wysihtml5" %>
-        <% end %>
+    <div class="accordion-group" data-kind="step">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#steps-accordion" href="#step-new-step-id">
+          Step :count:
+        </a>
+      </div>
+    
+      <div id="step-new-step-id" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <%= f.fields_for Step.new, index: 'new-step-id' do |s| %>
+            <%= s.text_area :content, :size => "75x20", :class => "span8" %>
+          <% end %>
+          <br />
+          <a href='#' class="btn btn-danger remove-step" data-kind="remove-step">Remove Step</a>
+          <div class='clearfix'>&nbsp;</div>
+        </div>
       </div>
     </div>
   </div>
+  
   <hr />
   <%= f.button "Save", :class => 'btn btn-large' %>
 <% end %>
