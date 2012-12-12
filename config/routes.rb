@@ -8,6 +8,7 @@ Refectory::Application.routes.draw do
   root :to => 'tutorials#index'
   
   resources :tutorials
+  resources :comments, only: [:show, :create, :update, :destroy]
   
   if Rails.env == "development"
     match 'errors/404' => 'errors#error_404'

@@ -12,6 +12,29 @@ $(function(){
     $(elem).wysihtml5({stylesheets: ["<%= asset_path "wysiwyg-color" %>", "<%= asset_path "prettify.css" %>"]});
   });
   
+  $('.wysihtml5-comment').each(function(i, elem) {
+    $(elem).wysihtml5({
+      stylesheets: ["<%= asset_path "wysiwyg-color" %>", "<%= asset_path "prettify.css" %>"],
+      color: false,
+      lists: false
+    });
+  });
+  
+  $("div[data-kind=step]").on("hide", function(e){
+    $("div[data-kind='comment-block']").fadeOut();
+  });
+  
+  $("div[data-kind=step]").on("shown", function(e){
+    var step_id = $(this).data('step-id');
+    $("div[data-comments-step-id=" + step_id + "]").fadeIn();
+  });
+  
+  $("div[data-comment-type='step']").hide();
+  $("div[data-comments-step-id=0]").show();
+  
+  if($.params['step'] && $.params['step'] > -1)
+    $("div[data-step-count=" + $.params['step'] + "] a:first").click();
+  
   $("a[data-kind='new-step']").on("click", function(e){
     e.preventDefault();
     var count = $("#steps-accordion div[data-kind='step']:last").data("step-count");

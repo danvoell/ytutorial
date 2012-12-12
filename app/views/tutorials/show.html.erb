@@ -1,31 +1,60 @@
 <div class="row">
   <div class="span6">
     <h1><%= @tutorial.title %></h1>
-    <%= @tutorial.outline.html_safe %>
+    <div class="accordion" id="steps-accordion">
+      <div class="accordion-group" data-kind="step" data-step-id="0">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#steps-accordion" href="#step-0">
+            Outline
+          </a>
+        </div>
+
+        <div id="step-0" class="accordion-body collapse in">
+          <div class="accordion-inner">
+            <%= @tutorial.outline.html_safe %>
+          </div>
+        </div>
+      </div>
+      
+      <% count = 0 %>
+      <% @tutorial.steps.each do |step| %>
+        <% count += 1 %>
+        <div class="accordion-group" data-kind="step" data-step-count="<%= count %>" data-step-id="<%= step.id %>">
+          <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#steps-accordion" href="#step-<%= step.id %>">
+              Step <%= count %>
+            </a>
+          </div>
+
+          <div id="step-<%= step.id %>" class="accordion-body collapse">
+            <div class="accordion-inner">
+              <%= step.content.html_safe %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  
+  <div class="span6" data-kind="comments">
+    <h1>Comments</h1>
+    
+    <div data-kind="comment-block" data-comment-type="step" data-comments-step-id="0">
+      <%= render partial: 'comment', collection: @tutorial.comments %>
+      <%= render partial: 'comment_form', object: Comment.new(tutorial_id: @tutorial.id) %>
+    </div>
+    
+    <% @tutorial.steps.each do |step| %>
+      <div data-kind="comment-block" data-comment-type="step" data-comments-step-id="<%= step.id %>">
+        <%= render partial: 'comment', collection: step.comments %>
+        <%= render partial: 'comment_form', object: Comment.new(step_id: step.id) %>
+      </div>
+    <% end %>
   </div>
 </div>
 
-<div class="accordion" id="steps-accordion">
-<% count = 0 %>
-<% @tutorial.steps.each do |step| %>
-  <% count += 1 %>
-  <div class="accordion-group" data-kind="step" data-step-count="<%= count %>">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#steps-accordion" href="#step-<%= step.id %>">
-        Step <%= count %>
-      </a>
-    </div>
-  
-    <div id="step-<%= step.id %>" class="accordion-body collapse <%= count == 1 ? 'in' : '' %>">
-      <div class="accordion-inner">
-        <%= step.content.html_safe %>
-      </div>
-    </div>
-  </div>
-<% end %>
-
 <div class="row">
   <div class="span6">
-    Tutorial by <%= @tutorial.user.name || "Anonymous" %>
+    Tutorial by <%= mail_to @tutorial.user.email %>
   </div>
 </div>

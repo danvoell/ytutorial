@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui-1.9.2.custom.min
+//= require jquery.params
 //= require tag-it.min
 //= require bootstrap.min.js
 //= require require.js

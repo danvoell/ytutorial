@@ -1,0 +1,12 @@
+<% comment = comment_form %>
+<% comment ||= @comment %>
+<%= form_for comment do |f| %>
+  <% that = comment.tutorial_id.present? ? "tutorial" : "step" %>
+  <%= f.hidden_field :tutorial_id %>
+  <%= f.hidden_field :step_id %>
+  
+  <%= f.label :content, "Post a comment on this #{that}:" %>
+  <%= f.text_area :content, :size => "75x5", :class => 'wysihtml5-comment span5' %>
+  <br />
+  <%= f.button "Save", :class => "btn" %>
+<% end %>

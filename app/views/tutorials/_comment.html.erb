@@ -1,0 +1,9 @@
+<div class="well">
+  <%= mail_to comment.user.email %> says:
+  <blockquote><%= comment.content.html_safe %></blockquote>
+  <% if current_user.present? && comment.editor?(current_user) %>
+    <div class="actions">
+      <%= link_to "Delete", comment_path(comment), :method => "delete", :confirm => "Are you sure?", :class => "btn btn-danger" %>
+    </div>
+  <% end %>
+</div>

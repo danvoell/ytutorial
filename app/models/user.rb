@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   
   has_many :tutorials
+  has_many :comments
   
   def admin?
     self.email == "andrew@atevans.com" || self.email == "danvoell@gmail.com"
