@@ -3,8 +3,8 @@
 
 <%= form_for tutorial do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title, :class => "span8" %>
-  
+  <%= f.text_field :title, :class => "span8" %><br>
+ Add an image of what the finished tutorial will look like: <%= f.file_field :image %>
   <div class="row">
     <div class="span8">
       <%= f.label :tags %>

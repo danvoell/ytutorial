@@ -2,14 +2,26 @@
 
 <%= link_to "Make Your Own", new_tutorial_path, :class => "btn" %>
 <br />
+
 <table class="table table-striped">
-  <tr><th>Title</th><th>Actions</th></tr>
-  <% @tutorials.each do |tutorial| %>
+  <tr>
+	<th>Picture</th>
+	
+   <th>Title</th>
+	
+	<th>Actions</th>
+			</tr>
+  
+
+
+<% @tutorials.each do |tutorial| %>
     <tr>
-      <td><%= tutorial.title %></td>
-      <td>
-        <%= link_to "View", tutorial_path(tutorial), :class => "btn" %>
-        <% if current_user.present? && tutorial.editor?(current_user) %>
+
+<td><%= image_tag tutorial.image_url(:thumb) if tutorial.image? %></td>      
+
+<td><%= link_to tutorial.title, tutorial_path(tutorial) %><%= tutorial.outline.html_safe %></td>
+      
+<td> <% if current_user.present? && tutorial.editor?(current_user) %>
           <%= link_to "Edit", edit_tutorial_path(tutorial), :class => "btn" %>
           <%= link_to "Delete", tutorial_path(tutorial), :method => "delete", :class => "btn btn-danger" %>
         <% end %>

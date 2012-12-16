@@ -1,7 +1,19 @@
 <div class="row">
-  <div class="span6">
-    <h1><%= @tutorial.title %></h1>
-    <div class="accordion" id="steps-accordion">
+<div class="span3"><br>
+<%= image_tag @tutorial.image_url(:medium) if @tutorial.image? %>
+	</div>  
+<div class="span7">
+    <h1><%= @tutorial.title %></h1><%= @tutorial.outline.html_safe %>
+</div>
+<div class="span2">
+    <br><%= link_to "Success", new_tutorial_path, :class => "btn" %><br>
+</div>
+
+</div>
+<hr>    
+<div class="row">
+	<div class="span6">
+<div class="accordion" id="steps-accordion">
       <div class="accordion-group" data-kind="step" data-step-id="0">
         <div class="accordion-heading">
           <a class="accordion-toggle" data-toggle="collapse" data-parent="#steps-accordion" href="#step-0">

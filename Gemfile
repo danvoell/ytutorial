@@ -24,6 +24,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "rmagick"
+gem "carrierwave"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -39,7 +41,7 @@ gem 'capistrano'
 gem 'capistrano-unicorn'
 
 group :development do
-  # gem 'mysql2psql'
+  gem 'sqlite3'
 end
 
 group :test do
