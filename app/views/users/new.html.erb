@@ -1,4 +1,12 @@
-<h2>Sign up</h2>
+<div class="row">
+	</div>
+
+<div class="row">
+<div class="span6">
+<h1 class="heading">Make and complete tutorials, together.</h1>
+<p class="subheading">Learn to code by following step-by-step software tutorials. Comment on individual steps. Build tutorials on top of each other to create complex applications.</p>
+</div>
+<div class="span6">
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -13,8 +21,13 @@
   <%= f.password_field :password_confirmation %>
 
   <div class="actions">
-    <%= f.submit "Sign up", :class => "btn" %>
+	
+   <%= f.submit "Sign up for free", :class => "btn btn-success btn-large" %>
   </div>
 <% end %>
 
+
 <%= render "devise/shared/links" %>
+</div>
+</div>
+<hr>
