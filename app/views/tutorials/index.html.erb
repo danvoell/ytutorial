@@ -15,11 +15,21 @@
 
 
 <% @tutorials.each do |tutorial| %>
+
     <tr>
 
 <td><%= image_tag tutorial.image_url(:thumb) if tutorial.image? %></td>      
 
-<td><%= link_to tutorial.title, tutorial_path(tutorial) %><%= tutorial.outline.html_safe %></td>
+<div class="details">
+<td><h3><%= link_to tutorial.title, tutorial_path(tutorial) %></h3>
+</div>
+<p class="exc"><%= tutorial.outline.html_safe %></p>
+
+<p class="manage">
+  <a href="/resources/d3-js-basic-tutorials">0 comments</a>
+   | <span class="f">1</span> Completed
+
+</td>
       
 <td> <% if current_user.present? && tutorial.editor?(current_user) %>
           <%= link_to "Edit", edit_tutorial_path(tutorial), :class => "btn" %>
