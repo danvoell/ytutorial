@@ -2,11 +2,16 @@
 <% tutorial ||= @tutorial %>
 
 <%= form_for tutorial do |f| %>
+
+
   <%= f.label :title %>
-  <%= f.text_field :title, :class => "span8" %><br>
+  <%= f.text_field :title, :class => "span4" %><br>
  Add an image of what the finished tutorial will look like: <%= f.file_field :image %>
-  <div class="row">
-    <div class="span8">
+  <%= f.label :website, "Link to Finished Website"  %>
+  <%= f.text_field :website, :class => "span4" %>
+
+<div class="row">
+    <div class="span4">
       <%= f.label :tags %>
       <%= f.text_field :tag_list, value: @tutorial.tags.collect(&:name).join(", "), placeholder: "ruby, solr, sunspot", class: "tagit" %>
       <span class="help-block">

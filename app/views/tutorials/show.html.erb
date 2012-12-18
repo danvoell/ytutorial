@@ -3,8 +3,14 @@
 <%= image_tag @tutorial.image_url(:medium) if @tutorial.image? %>
 	</div>  
 <div class="span7">
-    <h1><%= @tutorial.title %></h1><%= @tutorial.outline.html_safe %>
+    <h1><%= @tutorial.title %></h1>
+<b>Description:</b> <%= @tutorial.outline.html_safe %>
+<br><b>Link to Working Product:</b> <a href="<%= @tutorial.website %>"><%= @tutorial.website %></a>
+
+
 </div>
+
+
 <div class="span2">
     <br><%= link_to "Successfully Completed", new_tutorial_path, :class => "btn" %><br>
 </div>

@@ -4,7 +4,7 @@ class Tutorial < ActiveRecord::Base
   has_many :steps
   has_many :comments
   
-  attr_accessible :name, :image, :remote_image_url, :title, :tag_list, :outline, :file, :thumb
+  attr_accessible :name, :image, :remote_image_url, :title, :tag_list, :outline, :file, :thumb, :website
    mount_uploader :image, ImageUploader
   
   acts_as_taggable
