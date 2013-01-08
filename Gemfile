@@ -13,7 +13,6 @@ gem 'stringex'
 gem 'will_paginate'
 gem 'less-rails-bootstrap'
 gem 'acts-as-taggable-on', '~> 2.3.1'
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -24,7 +23,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem "rmagick"
+gem "mini_magick"
 gem "carrierwave"
 
 # To use ActiveModel has_secure_password

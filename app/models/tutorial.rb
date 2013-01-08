@@ -12,4 +12,9 @@ class Tutorial < ActiveRecord::Base
   def editor?(edit_user)
     self.user_id == edit_user.id || edit_user.admin?
   end
+
+  def to_param
+  	"#{id}-#{title}".parameterize
+  end
+
 end
