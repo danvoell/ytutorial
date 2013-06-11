@@ -14,6 +14,21 @@ class TutorialsController < ApplicationController
     @tutorial = Tutorial.new
   end
   
+def tagged
+  if params[:tag].present? 
+    @tutorials = Tutorial.tagged_with(params[:tag])
+  else 
+    @tutorials = Tutorial.postall
+  end  
+end
+
+def vote
+  value = params[:type] == "up" ? 1 : -1
+  @tutorial = Tutorial.find(params[:id])
+  @tutorial.add_or_update_evaluation(:votes, value, current_user)
+  redirect_to :back, notice: "Thank you for voting!"
+end
+
   def create
     @tutorial = Tutorial.new(params[:tutorial])
     @tutorial.user = current_user

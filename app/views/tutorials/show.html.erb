@@ -8,10 +8,18 @@
 <br><b>Link to Working Product:</b> <a href="<%= @tutorial.website %>"><%= @tutorial.website %></a>
 <br><b>Tags:</b> <%= @tutorial.tag_list %>
 
+<% @tutorial.tags.any? %>
+  <% @tutorial.tags.each do |tag| %>
+  <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+<% end %>
+
+<br><b>Successfully Completed By:</b><%= pluralize @tutorial.reputation_for(:votes).to_i, "folk" %>
+    | <%= link_to "I successfully completed", vote_tutorial_path(@tutorial, type: "up"), method: "post" %>
+
 </div>
 
 
-<div class="span2">
+<!--<div class="span2">
     <br>
 
 
@@ -35,7 +43,7 @@
 
 <p><a data-toggle="modal" href="#example" class="btn btn-primary btn-large">Succesfully Completed!</a></p> 
 
-</div>
+</div> -->
 
 </div>
 <hr>    
@@ -59,10 +67,10 @@
       <% count = 0 %>
       <% @tutorial.steps.each do |step| %>
         <% count += 1 %>
-        <div class="accordion-group" data-kind="step" data-step-count="<%= count %>" data-step-id="<%= step.id %>">
+        <div class="accordion-group" data-kind="step" data-step-count="<%= count %>" data-step-id="<%= step.id %>"> 
           <div class="accordion-heading">
             <a class="accordion-toggle" data-toggle="collapse" data-parent="#steps-accordion" href="#step-<%= step.id %>">
-              Step <%= count %>
+              Step <%= count %> - <%= step.steptitle %>
             </a>
           </div>
 
@@ -95,6 +103,6 @@
 
 <div class="row">
   <div class="span6">
-    Tutorial by <%= mail_to @tutorial.user.email %>
+    Tutorial by <%= link_to @tutorial.user.username %>
   </div>
 </div>

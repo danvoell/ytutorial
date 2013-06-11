@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Refectory</title>
+  <title>SmartyFish</title>
   <link rel="icon" type="image/png" href="">
   <%= stylesheet_link_tag "application", :media => "all" %>
   <% unless Refectory::Application.assets.find_asset("#{params[:controller]}.css").nil? %>
@@ -33,7 +33,7 @@
 <div class="navbar">
   <div class="navbar-inner">
     <div class="container">
-      <div class="brand"><%= link_to "Refectory", root_path %></div>
+      <div class="brand"><%= link_to "SmartyFish", root_path %></div>
       <ul class="nav">
         <li><%= link_to "Tutorials", tutorials_path %></li>
         <% if current_user.present? %>
@@ -61,7 +61,7 @@
 
   <footer>
     <div class="copy">
-      &copy; <%= Time.now.strftime("%Y") %> Refectory
+      &copy; <%= Time.now.strftime("%Y") %> SmartyFish
     </div>
   </footer>
 </div>

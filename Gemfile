@@ -25,6 +25,7 @@ end
 gem 'jquery-rails'
 gem "mini_magick"
 gem "carrierwave"
+gem 'activerecord-reputation-system', require: 'reputation_system'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

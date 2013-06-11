@@ -37,7 +37,9 @@
         <div id="step-<%= step.id %>" class="accordion-body collapse <%= count == 1 ? 'in' : '' %>">
           <div class="accordion-inner">
             <%= f.fields_for step, index: (step.id || 'new') do |s| %>
+               <%= s.text_field :steptitle, :placeholder => "Step Title" %>
               <%= s.text_area :content, :size => "75x20", :class => "span8 wysihtml5" %>
+
             <% end %>
             <br />
             <a href='#' class="btn btn-danger remove-step" data-kind="remove-step">Remove Step</a>
