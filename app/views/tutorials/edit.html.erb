@@ -30,7 +30,7 @@
       <div class="accordion-group" data-kind="step" data-step-count="<%= count %>">
         <div class="accordion-heading">
           <a class="accordion-toggle" data-toggle="collapse" data-parent="#steps-accordion" href="#step-<%= step.id %>">
-            Step <%= count %>
+            Step <%= count %> - <%= step.steptitle %>
           </a>
         </div>
       
@@ -38,7 +38,7 @@
           <div class="accordion-inner">
             <%= f.fields_for step, index: (step.id || 'new') do |s| %>
                <%= s.text_field :steptitle, :placeholder => "Step Title (Create Rails App...)" %>
-              <%= s.text_area :content, :size => "75x20", :class => "span8 wysihtml5" %>
+              <%= s.text_area :content, :size => "75x10", :class => "span8 wysihtml5" %>
 
             <% end %>
             <br />
@@ -51,8 +51,7 @@
       
   </div>
   
-  <a href='#' class="btn" data-kind="new-step">Add Step</a>
-  <br />
+  <!-- <a href='#' class="btn" data-kind="new-step">Add Step</a> -->
   
   <div class="hide" data-kind="new-step">
     <div class="accordion-group" data-kind="step">
@@ -65,7 +64,7 @@
       <div id="step-new-step-id" class="accordion-body collapse">
         <div class="accordion-inner">
           <%= f.fields_for Step.new, index: 'new-step-id' do |s| %>
-            <%= s.text_area :content, :size => "75x20", :class => "span8" %>
+            <%= s.text_area :content, :size => "75x10", :class => "span8" %>
           <% end %>
           <br />
           <a href='#' class="btn btn-danger remove-step" data-kind="remove-step">Remove Step</a>
@@ -76,7 +75,7 @@
   </div>
   
   <hr />
-  <%= f.button "Save", :class => 'btn btn-large' %>
+  <%= f.button "Save To Finish Or Add New Step", :class => 'btn btn-large' %>
 <% end %>
 
 <br />
