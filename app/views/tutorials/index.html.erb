@@ -1,5 +1,6 @@
 
-
+<div class="row">
+  <div class="span9">
 <table class="table table-striped">
   
 <% @tutorials.each do |tutorial| %>
@@ -11,18 +12,16 @@
 <!--<td><%= image_tag tutorial.image_url(:thumb) if tutorial.image? %></td>      -->
 
 <div class="details">
-<td><h4><%= link_to tutorial.title, tutorial_path(tutorial) %></h4>
+<td><h3><%= link_to tutorial.title, tutorial_path(tutorial) %></h3>
 </div>
 <p class="exc"><%= tutorial.outline.html_safe %></p>
 <p class="manage">
    Successfully Completed:</b><%= pluralize tutorial.reputation_for(:votes).to_i, "times" %> | Tutorial by <%= tutorial.user.username %> | Tags: <% tutorial.tags.any? %>
   <% tutorial.tags.each do |tag| %>
-  <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+  <%= link_to tag.name, tagged_url(:tag => tag.name) %>,
 <% end %> | Working Demo: <%= link_to tutorial.website, tutorial.website %>
 
-</td>
-      
-<td> <% if current_user.present? && tutorial.editor?(current_user) %>
+       <% if current_user.present? && tutorial.editor?(current_user) %>
           <%= link_to "Edit", edit_tutorial_path(tutorial), :class => "btn" %>
           <%= link_to "Delete", tutorial_path(tutorial), :method => "delete", :class => "btn btn-danger" %>
         <% end %>
@@ -30,3 +29,14 @@
     </tr>
   <% end %>
 </table>
+</div>
+  <div class="span3">
+    <div class="well" align="center">
+    
+    We are a community of rails developers helping each other learn to code. The goal is to have a library of tutorials that we can build on to make complex applications.
+  </div>
+     <div class="well" align="center">
+    Instead of having a disparate collection of tutorials on individuals blogs (that don't work and aren't updated), why not have a collaborative collection?
+  </div>
+    </div>
+</div>
