@@ -8,8 +8,12 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username
   
+ 
   has_many :tutorials
   has_many :comments
+  
+has_reputation :votes, source: {reputation: :votes, of: :tutorials}, aggregated_by: :sum
+
   
   def admin?
     self.email == "andrew@atevans.com" || self.email == "danvoell@gmail.com"

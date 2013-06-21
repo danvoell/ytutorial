@@ -16,10 +16,12 @@
 </div>
 <p class="exc"><%= tutorial.outline.html_safe %></p>
 <p class="manage">
-   Successfully Completed:</b><%= pluralize tutorial.reputation_for(:votes).to_i, "times" %> | Tutorial by <%= tutorial.user.username %> | Tags: <% tutorial.tags.any? %>
+   Successfully Completed: <b><%= pluralize tutorial.reputation_for(:votes).to_i, "times" %></b> | Tutorial by <%= tutorial.user.username %> | 
+
+   <!-- Tags: <% tutorial.tags.any? %>
   <% tutorial.tags.each do |tag| %>
-  <%= link_to tag.name, tagged_url(:tag => tag.name) %>,
-<% end %> | Working Demo: <%= link_to tutorial.website, tutorial.website %>
+  <%= link_to tag.name, tagged_url(:tag => tag.name) %> 
+<% end %> | --> Working Demo: <%= link_to tutorial.website, tutorial.website %>
 
        <% if current_user.present? && tutorial.editor?(current_user) %>
           <%= link_to "Edit", edit_tutorial_path(tutorial), :class => "btn" %>
@@ -32,11 +34,11 @@
 </div>
   <div class="span3">
     <div class="well" align="center">
-    
+    <h3>About</h3>
     We are a community of rails developers helping each other learn to code. The goal is to have a library of tutorials that we can build on to make complex applications.
   </div>
-     <div class="well" align="center">
-    Instead of having a disparate collection of tutorials on individuals blogs (that don't work and aren't updated), why not have a collaborative collection?
+     <div class="well" align="center"><h3>Top Tutors</h3>Coming Soon [As A Tutorial]!
+
   </div>
     </div>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SmartyFish</title>
+  <title>Y Tutorial | Rails Python PHP Tutorials</title>
   <link rel="icon" type="image/png" href="">
   <%= stylesheet_link_tag "application", :media => "all" %>
   <% unless Refectory::Application.assets.find_asset("#{params[:controller]}.css").nil? %>
@@ -30,12 +30,13 @@
 </head>
 <body>
 
+<div class="container">
 <div class="navbar">
   <div class="navbar-inner">
     <div class="container">
-      <div class="brand"><%= link_to "SmartyFish", root_path %></div>
+      <div class="brand"><%= link_to "Y Tutorial", root_path %></div>
       <ul class="nav">
-        <li><%= link_to "Tutorials", tutorials_path %></li>
+        
         <% if current_user.present? %>
           <li><%= link_to "Log out", destroy_user_session_path(:method => "delete") %></li>
         <% else %>
@@ -48,7 +49,7 @@
   </div>
 </div>
 
-<div class="container">
+
   
   <% if flash[:notice] %>
     <div class="alert alert-info"><%= flash[:notice] %> <button class="close">&times;</button></div>
@@ -62,7 +63,7 @@
 
   <footer>
     <div class="copy">
-      &copy; <%= Time.now.strftime("%Y") %> SmartyFish
+      &copy; <%= Time.now.strftime("%Y") %> [Y]Tutorial - Not in anyway associated with YCombinator. We are big fans of YCombinator, so please don't sue us.
     </div>
   </footer>
 </div>

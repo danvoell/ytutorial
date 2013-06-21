@@ -4,24 +4,19 @@
 <%= form_for tutorial do |f| %>
 
 
-  <%= f.label :title %>
-  <%= f.text_field :title, :class => "span4" %><br>
- <!--Add an image of what the finished tutorial will look like: <%= f.file_field :image %> -->
-  <%= f.label :website, "Link to Finished Website"  %>
-  <%= f.text_field :website, :class => "span4" %>
+ 
+  <%= f.text_field :title, :class => "span4", :placeholder => "Tutorial Title" %><br>
+ <!--Add an image of what the finished tutorial will look like: <%= f.file_field :image %> -->  <%= f.text_field :website, :class => "span4", :placeholder => "Link to Working Demo or Website" %>
 
 <div class="row">
     <div class="span4">
-      <%= f.label :tags %>
-      <%= f.text_field :tag_list, value: @tutorial.tags.collect(&:name).join(", "), placeholder: "ruby, solr, sunspot", class: "tagit" %>
-      <span class="help-block">
-        Separate by commas, use double quotes for multi-word tags
-      </span>
+      <%= f.label :tags, "Tags (Comma, Seperated):" %>
+      <%= f.text_field :tag_list, value: @tutorial.tags.collect(&:name).join(", "), class: "tagit" %>
     </div>
   </div>
   
-  <%= f.label :outline %>
+  <%= f.label :outline, "Short Overview of Tutorial:" %>
   <%= f.text_area :outline, :size => "75x5", :class => "span8 wysihtml5" %>
   <br />
-  <%= f.button "Submit", :class => "btn" %>
+  <%= f.button "Submit To Start Adding Steps", :class => "btn" %>
 <% end %>

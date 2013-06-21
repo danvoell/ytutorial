@@ -14,7 +14,7 @@
 <% end %>
 
 <br><b>Successfully Completed By: </b><%= pluralize @tutorial.reputation_for(:votes).to_i, "folk" %>
-    | <%= link_to "I successfully completed", vote_tutorial_path(@tutorial, type: "up"), method: "post", :class => "btn btn-info" %>
+    | <%= link_to "I Successfully Completed This Tutorial!", vote_tutorial_path(@tutorial, type: "up"), method: "post", :class => "btn btn-info" %>
 
 </div>
 
