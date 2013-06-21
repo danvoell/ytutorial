@@ -1,5 +1,5 @@
 <div class="well">
-  <%= mail_to comment.user.email %> says:
+  <%= mail_to comment.user.username %> says:
   <blockquote><%= comment.content.html_safe %></blockquote>
   <% if current_user.present? && comment.editor?(current_user) %>
     <div class="actions">

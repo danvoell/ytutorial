@@ -1,19 +1,19 @@
 <div class="row">
-<div class="span3"><br>
+<!--<div class="span3"><br>
 <%= image_tag @tutorial.image_url(:medium) if @tutorial.image? %>
-	</div>  
+	</div> -->  
 <div class="span7">
     <h1><%= @tutorial.title %></h1>
-<b>Description:</b> <%= @tutorial.outline.html_safe %>
+<b>Short Description:</b> <%= @tutorial.outline.html_safe %>
 <br><b>Link to Working Product:</b> <a href="<%= @tutorial.website %>"><%= @tutorial.website %></a>
-<br><b>Tags:</b> <%= @tutorial.tag_list %>
+<br><b>Tags:</b>
 
 <% @tutorial.tags.any? %>
   <% @tutorial.tags.each do |tag| %>
   <%= link_to tag.name, tagged_url(:tag => tag.name) %>
 <% end %>
 
-<br><b>Successfully Completed By:</b><%= pluralize @tutorial.reputation_for(:votes).to_i, "folk" %>
+<br><b>Successfully Completed By: </b><%= pluralize @tutorial.reputation_for(:votes).to_i, "folk" %>
     | <%= link_to "I successfully completed", vote_tutorial_path(@tutorial, type: "up"), method: "post" %>
 
 </div>
@@ -50,19 +50,7 @@
 <div class="row">
 	<div class="span6">
 <div class="accordion" id="steps-accordion">
-      <div class="accordion-group" data-kind="step" data-step-id="0">
-        <div class="accordion-heading">
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#steps-accordion" href="#step-0">
-            Outline
-          </a>
-        </div>
-
-        <div id="step-0" class="accordion-body collapse in">
-          <div class="accordion-inner">
-            <%= @tutorial.outline.html_safe %>
-          </div>
-        </div>
-      </div>
+      
       
       <% count = 0 %>
       <% @tutorial.steps.each do |step| %>
@@ -87,10 +75,7 @@
   <div class="span6" data-kind="comments">
     <h1>Comments</h1>
     
-    <div data-kind="comment-block" data-comment-type="step" data-comments-step-id="0">
-      <%= render partial: 'comment', collection: @tutorial.comments %>
-      <%= render partial: 'comment_form', object: Comment.new(tutorial_id: @tutorial.id) %>
-    </div>
+    
     
     <% @tutorial.steps.each do |step| %>
       <div data-kind="comment-block" data-comment-type="step" data-comments-step-id="<%= step.id %>">

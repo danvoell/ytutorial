@@ -1,32 +1,24 @@
-<h3>Learn by following tutorials or <%= link_to "Make Your Own", new_tutorial_path, :class => "btn btn-success btn-large" %></h3>
-<br />
+
 
 <table class="table table-striped">
-  <tr>
-	<th>Picture</th>
-	
-   <th>Title</th>
-	
-	<th>Actions</th>
-			</tr>
   
-
-
 <% @tutorials.each do |tutorial| %>
 
     <tr>
 
-     <td>  </td>
+    
 
-<td><%= image_tag tutorial.image_url(:thumb) if tutorial.image? %></td>      
+<!--<td><%= image_tag tutorial.image_url(:thumb) if tutorial.image? %></td>      -->
 
 <div class="details">
-<td><h3><%= link_to tutorial.title, tutorial_path(tutorial) %></h3>
+<td><h4><%= link_to tutorial.title, tutorial_path(tutorial) %></h4>
 </div>
 <p class="exc"><%= tutorial.outline.html_safe %></p>
 <p class="manage">
-  <a href="/resources/d3-js-basic-tutorials">0 comments</a>
-   | <span class="f">1</span> Completed
+   Successfully Completed:</b><%= pluralize tutorial.reputation_for(:votes).to_i, "times" %> | Tutorial by <%= tutorial.user.username %> | Tags: <% tutorial.tags.any? %>
+  <% tutorial.tags.each do |tag| %>
+  <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+<% end %> | Working Demo: <%= link_to tutorial.website, tutorial.website %>
 
 </td>
       
