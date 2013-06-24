@@ -19,31 +19,26 @@
 </div>
 
 
-<!--<div class="span2">
+<div class="span2">
     <br>
+<div class="well" align="center">
+ Share<br>
+<%= link_to "http://www.facebook.com/sharer.php?u=#{tutorial_url(@tutorial)}" do %> <i class="icon-facebook icon-2x"></i>
+<% end %>
+                        
 
+<%= link_to "http://twitter.com/home?status= #{tutorial_url(@tutorial)} - Rails Tutorial Community" do %>
+ <i class="icon-twitter icon-2x"></i>
+<% end %>
 
-	<div id="example" class="modal hide fade">
-	  <div class="modal-header">
-	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	    <h3>Shooting Down Tutorials, Like a Boss.</h3>
-	  </div>
-	  <div class="modal-body">
-	    <p>Congratulations on completing this tutorial! You are on your way to becoming a full fledged Master Coder. Refectory is a free site (i.e. no marketing budget) help us grow and help others learn to code by spreading your achievements on <a href="http://twitter.com/share?text=I completed the tutorial - <%= @tutorial.title %> on http://www.refectory.com">Twitter</a> and <a href="http://www.facebook.com/sharer.php?u=<%= request.url %>">Facebook.</p>
-	
-	
-	
-	  </div>
-	
-	  <div class="modal-footer">
-	    <a href="#" class="btn">Close</a>
-	    <a href="#" class="btn btn-primary">Save changes</a>
-	  </div>
+<%= link_to "https://plus.google.com/share?url=#{tutorial_url(@tutorial)}" do %>
+ <i class="icon-google-plus icon-2x"></i>
+<% end %>         
 	</div>
-
-<p><a data-toggle="modal" href="#example" class="btn btn-primary btn-large">Succesfully Completed!</a></p> 
-
-</div> -->
+	
+	  </div>
+	
+	 
 
 </div>
 <hr>    

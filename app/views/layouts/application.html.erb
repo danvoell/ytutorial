@@ -4,6 +4,7 @@
   <title>Y Tutorial | Rails Python PHP Tutorials</title>
   <link rel="icon" type="image/png" href="">
   <%= stylesheet_link_tag "application", :media => "all" %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
   <% unless Refectory::Application.assets.find_asset("#{params[:controller]}.css").nil? %>
     <%= stylesheet_link_tag params[:controller] %>
   <% end %>
