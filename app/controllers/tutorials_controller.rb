@@ -26,8 +26,13 @@ def vote
   value = params[:type] == "up" ? 1 : -1
   @tutorial = Tutorial.find(params[:id])
   @tutorial.add_or_update_evaluation(:votes, value, current_user)
-  redirect_to :back, notice: "Congratulations, You Did It! Please spread the word about your momentous achievement on Facebook, Twitter, and Google +. We are a free tool and don't have a marketing budget, each share might help another developer ninja in training!"
+  redirect_to :back, notice: "Congratulations, you did it! Please spread the word about your momentous achievement to your social stratosphere. We are a free tool and don't have a marketing budget, each share might help another developer in training get unstuck."
 end
+
+
+
+
+
 
   def create
     @tutorial = Tutorial.new(params[:tutorial])
