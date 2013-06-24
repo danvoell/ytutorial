@@ -12,16 +12,18 @@
 <!--<td><%= image_tag tutorial.image_url(:thumb) if tutorial.image? %></td>      -->
 
 <div class="details">
-<td><h3><%= link_to tutorial.title, tutorial_path(tutorial) %></h3>
+<td><h3><%= link_to tutorial.title, tutorial_path(tutorial) %>
+
+</h3>
 </div>
 <p class="exc"><%= tutorial.outline.html_safe %></p>
-<p class="manage">
-   Successfully Completed: <b><%= pluralize tutorial.reputation_for(:votes).to_i, "times" %></b> | Tutorial by <%= tutorial.user.username %> | 
+<p class="manage"><%= tutorial.steps.count %> Easy Steps | 
+   Completed: <b><%= pluralize tutorial.reputation_for(:votes).to_i, "times" %></b> | Tutorial by <%= tutorial.user.username %> <b>(<%= tutorial.user.reputation_for(:votes).to_i %> Y Stars)</b> | <%="#{time_ago_in_words(tutorial.created_at)} ago" %>
 
    <!-- Tags: <% tutorial.tags.any? %>
   <% tutorial.tags.each do |tag| %>
   <%= link_to tag.name, tagged_url(:tag => tag.name) %> 
-<% end %> | --> Working Demo: <%= link_to tutorial.website, tutorial.website %>
+<% end %> |  Working Demo: <%= link_to tutorial.website, tutorial.website %> -->
 
        <% if current_user.present? && tutorial.editor?(current_user) %>
           <%= link_to "Edit", edit_tutorial_path(tutorial), :class => "btn" %>
@@ -33,9 +35,14 @@
 </table>
 </div>
   <div class="span3">
-    <div class="well" align="center">
+    <div class="well info" align="center">
     <h3>About</h3>
-    We are a community of rails developers helping each other learn to code. If something "clicks" when you go through a tutorial, the next time you overcome a road block, make a tutorial to help others. Thanks!</div>
+    Community of rails developers collaboratively teaching each other to code. </div>
+
+<!-- <div class="well" align="center">
+    <h3>Makers Club</h3>
+    The make club chooses one tutorial/gem per week to go through. Sign Up Today!</div>
+-->
 
   </div>
     </div>
