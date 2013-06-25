@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://www.ytutorial.com/</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/users/sign_in</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/users/sign_up</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/1-delete-database-in-heroku-and-start-over</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/3-redirect-your-domain-from-godaddy-to-heroku</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/4-twitter-style-posted-x-days-ago-in-rails</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/2-rails-referral-affiliate-tracking</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/users/password/new</loc>
+</url>
+</urlset>
