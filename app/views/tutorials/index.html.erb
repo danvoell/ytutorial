@@ -13,14 +13,14 @@
 
 <div class="details">
 <td>
-  <div class="wellnew" align="center"><div class="stepcount">
-<%= tutorial.steps.count %></div><small>steps</small></td>
-</div>
+  <div class="stepcount" align="center">
+<%= tutorial.steps.count %><br><small>steps</small></div></td>
+
  <td>
 
- <div class="wellcomplete" align="center"><div class="stepcomplete">
-<%= tutorial.reputation_for(:votes).to_i %></div><small>success</small></td>
-</div>
+<div class="stepcomplete" align="center">
+<%= tutorial.reputation_for(:votes).to_i %><br><small>success</small></div></td>
+
 
 <td>
   <h3><%= link_to tutorial.title, tutorial_path(tutorial) %>
@@ -29,7 +29,7 @@
 </div>
 <p class="exc"><%= truncate(tutorial.outline.html_safe, length: 200) %></p>
 <p class="manage">
-  Tutorial by <%= tutorial.user.username %> (Guided <b><%= tutorial.user.reputation_for(:user_votes).to_i %> coders </b>to safety) | <%="#{time_ago_in_words(tutorial.created_at)} ago" %>
+  By <%= tutorial.user.username %> <!--(Guided <b><%= tutorial.user.reputation_for(:user_votes).to_i %> coders </b>to safety)--> | <%="#{time_ago_in_words(tutorial.created_at)} ago" %>
 
    <!-- Tags: <% tutorial.tags.any? %>
   <% tutorial.tags.each do |tag| %>
