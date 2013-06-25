@@ -16,7 +16,7 @@
 
 </h3>
 </div>
-<p class="exc"><%= truncate(tutorial.outline.html_safe, length: 150) %></p>
+<p class="exc"><%= truncate(tutorial.outline.html_safe, length: 200) %></p>
 <p class="manage"><%= tutorial.steps.count %> Easy Steps | 
    Completed: <b><%= pluralize tutorial.reputation_for(:votes).to_i, "times" %></b> | Tutorial by <%= tutorial.user.username %> (Guided <b><%= tutorial.user.reputation_for(:user_votes).to_i %> coders </b>to safety) | <%="#{time_ago_in_words(tutorial.created_at)} ago" %>
 
@@ -38,6 +38,12 @@
     <div class="well info" align="center">
     <h3>About</h3>
     Community of rails developers collaboratively teaching each other to code. </div>
+
+     <div class="well info" align="center">
+    <h3>Resources</h3><hr>
+      Learn via Videos with Ryan Bates’s <a href="http://railscasts.com/">RailsCasts</a><hr>
+      Learn via Tutorial with Michael Hartl's <a href="http://ruby.railstutorial.org/">http://ruby.railstutorial.org/</a>
+     </div>
 
 <!-- <div class="well" align="center">
     <h3>Makers Club</h3>
