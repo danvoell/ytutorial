@@ -30,10 +30,6 @@ def vote
 end
 
 
-
-
-
-
   def create
     @tutorial = Tutorial.new(params[:tutorial])
     @tutorial.user = current_user

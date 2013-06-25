@@ -18,7 +18,7 @@
 </div>
 <p class="exc"><%= tutorial.outline.html_safe %></p>
 <p class="manage"><%= tutorial.steps.count %> Easy Steps | 
-   Completed: <b><%= pluralize tutorial.reputation_for(:votes).to_i, "times" %></b> | Tutorial by <%= tutorial.user.username %> (Guided <b><%= tutorial.user.reputation_for(:votes).to_i %> coders </b>to safety) | <%="#{time_ago_in_words(tutorial.created_at)} ago" %>
+   Completed: <b><%= pluralize tutorial.reputation_for(:votes).to_i, "times" %></b> | Tutorial by <%= tutorial.user.username %> (Guided <b><%= tutorial.user.reputation_for(:user_votes).to_i %> coders </b>to safety) | <%="#{time_ago_in_words(tutorial.created_at)} ago" %>
 
    <!-- Tags: <% tutorial.tags.any? %>
   <% tutorial.tags.each do |tag| %>

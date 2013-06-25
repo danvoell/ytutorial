@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :tutorials
   has_many :comments
   
-has_reputation :votes, source: {reputation: :votes, of: :tutorials}, aggregated_by: :sum
+has_reputation :user_votes, source: {reputation: :votes, of: :tutorials}, aggregated_by: :sum
 
   
   def admin?
