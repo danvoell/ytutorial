@@ -13,8 +13,9 @@
   <%= link_to tag.name, tagged_url(:tag => tag.name) %>
 <% end %> -->
 
-<br><b>Successfully Completed By: </b><%= pluralize @tutorial.reputation_for(:votes).to_i, "folk" %>
-    | <%= link_to "I Successfully Completed This Tutorial!", vote_tutorial_path(@tutorial, type: "up"), method: "post", :class => "btn btn-info" %>
+<br><b>Successfully Completed By: </b><%= pluralize @tutorial.reputation_for(:votes).to_i, "folk" %><br>
+<b>Tutorial By:</b> <%= link_to @tutorial.user.username %>
+    
 
 </div>
 
@@ -22,7 +23,7 @@
 <div class="span2">
     <br>
 <div class="well" align="center">
- Share<br>
+ Share Tutorial<br>
 <%= link_to "http://www.facebook.com/sharer.php?u=#{tutorial_url(@tutorial)}" do %> <i class="icon-facebook icon-2x"></i>
 <% end %>
                         
@@ -80,6 +81,7 @@
 
 <div class="row">
   <div class="span6">
-    Tutorial by <%= link_to @tutorial.user.username %>
+    <%= link_to "I Successfully Completed This Tutorial!", vote_tutorial_path(@tutorial, type: "up"), method: "post", :class => "btn btn-info" %> <br><br>
+    
   </div>
 </div>
