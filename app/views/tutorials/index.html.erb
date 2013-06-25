@@ -27,9 +27,9 @@
 
 </h3>
 </div>
-<p class="exc"><%= truncate(tutorial.outline.html_safe, length: 200) %></p>
-<p class="manage">
-  By <%= tutorial.user.username %> <!--(Guided <b><%= tutorial.user.reputation_for(:user_votes).to_i %> coders </b>to safety)--> | <%="#{time_ago_in_words(tutorial.created_at)} ago" %>
+<div class="shortdescription"><%= truncate(tutorial.outline.html_safe, length: 200) %></div>
+<div class="userandpost">
+ By <%= tutorial.user.username %> <!--(Guided <b><%= tutorial.user.reputation_for(:user_votes).to_i %> coders </b>to safety)--> | <%="#{time_ago_in_words(tutorial.created_at)} ago" %></div>
 
    <!-- Tags: <% tutorial.tags.any? %>
   <% tutorial.tags.each do |tag| %>
@@ -47,11 +47,11 @@
 </div>
   <div class="span2">
     <div class="wellcomplete" align="center">
-    <h3>About</h3>
+    <h4>About</h4>
     Community of rails developers teaching each other to code. </div>
 <br>
      <div class="wellcomplete" align="center">
-    <h3>Additional <br><br><br><br>Resources</h3><hr>
+    <h4>Additional Resources</h4><hr>
       Learn via Videos with Ryan Bates’s <a href="http://railscasts.com/">RailsCasts</a><hr>
       Learn via Tutorial with Michael Hartl's <a href="http://ruby.railstutorial.org/">RailsTutorial</a>
      </div>
