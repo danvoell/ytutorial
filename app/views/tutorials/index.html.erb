@@ -14,8 +14,14 @@
 <div class="details">
 <td>
   <div class="wellnew" align="center"><div class="stepcount">
-<%= tutorial.steps.count %></div><small>easy <br>steps</small></td>
+<%= tutorial.steps.count %></div><small>steps</small></td>
 </div>
+ <td>
+
+ <div class="wellcomplete" align="center"><div class="stepcomplete">
+<%= tutorial.steps.count %></div><small>success</small></td>
+</div>
+
 <td>
   <h3><%= link_to tutorial.title, tutorial_path(tutorial) %>
 
