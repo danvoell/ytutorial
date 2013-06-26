@@ -3,7 +3,9 @@
   <div class="span10">
 <table class="table table-striped">
   
+
 <% @tutorials.each do |tutorial| %>
+
 
     <tr>
 
@@ -44,6 +46,7 @@
     </tr>
   <% end %>
 </table>
+  <%= will_paginate @tutorial %>
 </div>
   <div class="span2">
     <div class="wellcomplete" align="center">
