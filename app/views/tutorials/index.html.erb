@@ -26,7 +26,7 @@
 
 
 <td>
-  <h3><%= link_to tutorial.title, tutorial_path(tutorial) %>
+  <h3><%= link_to truncate(tutorial.title, length: 40), tutorial_path(tutorial) %>
 
 </h3>
 </div>
