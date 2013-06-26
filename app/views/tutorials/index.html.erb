@@ -1,6 +1,7 @@
 
+     
 <div class="row">
-  <div class="span10">
+  <div class="span9">
 <table class="table table-striped">
   
 
@@ -46,18 +47,35 @@
     </tr>
   <% end %>
 </table>
-  <%= will_paginate @tutorial %>
+<%= will_paginate(@tutorial, :renderer => WillPaginate::ActionView::LinkRenderer) %>
 </div>
-  <div class="span2">
+  <div class="span3">
     <div class="wellcomplete" align="center">
     <h4>About</h4>
     Community of rails developers teaching each other to code. </div>
-<br>
+
+<script>
+  (function() {
+    var cx = '011548052767392118901:qftdif1o4ai';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+
      <div class="wellcomplete" align="center">
     <h4>Additional Resources</h4><hr>
       Learn via Videos with Ryan Bates’s <a href="http://railscasts.com/">RailsCasts</a><hr>
       Learn via Tutorial with Michael Hartl's <a href="http://ruby.railstutorial.org/">RailsTutorial</a>
      </div>
+
+       
+
 
 <!-- <div class="well" align="center">
     <h3>Makers Club</h3>
