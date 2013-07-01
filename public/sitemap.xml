@@ -16,18 +16,57 @@
   <loc>http://www.ytutorial.com/users/sign_up</loc>
 </url>
 <url>
+  <loc>http://www.ytutorial.com/tutorials/12-seo-friendly-url-helper-for-rails</loc>
+</url>
+<url>
   <loc>http://www.ytutorial.com/tutorials/1-delete-database-in-heroku-and-start-over</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/3-redirect-your-domain-from-godaddy-to-heroku</loc>
+  <loc>http://www.ytutorial.com/tutorials/7-adding-font-awesome-to-a-rails-project</loc>
 </url>
 <url>
   <loc>http://www.ytutorial.com/tutorials/4-twitter-style-posted-x-days-ago-in-rails</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/2-rails-referral-affiliate-tracking</loc>
+  <loc>http://www.ytutorial.com/tutorials/3-redirect-your-domain-from-godaddy-to-heroku</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/?page=2</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/?page=3</loc>
 </url>
 <url>
   <loc>http://www.ytutorial.com/users/password/new</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/8-back-end-admin-for-rails-application</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/9-check-your-devise-user-database-table-in-heroku</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/5-twitter-automation-via-command-line</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/2-rails-referral-affiliate-tracking</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/15-subscription-devise-email-stripe-using-railsapps-template</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/?page=1</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/6-limit-amount-of-characters-in-view</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/11-adding-will_paginate-to-your-model-for-rails-pagination</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/10-google-analytics-in-rails</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/14-rails-scaffold-for-beginners-all-code-snippets-are-done-in-the-command-line</loc>
 </url>
 </urlset>
