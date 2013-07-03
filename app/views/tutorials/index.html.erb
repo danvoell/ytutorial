@@ -30,7 +30,7 @@
 
 </h3>
 </div>
-<div class="shortdescription"><%= truncate(tutorial.outline.html_safe, length: 200) %></div>
+<div class="shortdescription"><%= raw(truncate(tutorial.outline.html_safe, length: 200)) %></div>
 <div class="userandpost">
  By <%= tutorial.user.username %> <!--(Guided <b><%= tutorial.user.reputation_for(:user_votes).to_i %> coders </b>to safety)--> | <%="#{time_ago_in_words(tutorial.created_at)} ago" %></div>
 
