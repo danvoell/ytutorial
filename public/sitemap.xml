@@ -37,6 +37,9 @@
   <loc>http://www.ytutorial.com/?page=3</loc>
 </url>
 <url>
+  <loc>http://www.ytutorial.com/?page=4</loc>
+</url>
+<url>
   <loc>http://www.ytutorial.com/users/password/new</loc>
 </url>
 <url>
@@ -52,13 +55,10 @@
   <loc>http://www.ytutorial.com/tutorials/2-rails-referral-affiliate-tracking</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/15-subscription-devise-email-stripe-using-railsapps-template</loc>
+  <loc>http://www.ytutorial.com/tutorials/6-limit-amount-of-characters-in-view</loc>
 </url>
 <url>
   <loc>http://www.ytutorial.com/?page=1</loc>
-</url>
-<url>
-  <loc>http://www.ytutorial.com/tutorials/6-limit-amount-of-characters-in-view</loc>
 </url>
 <url>
   <loc>http://www.ytutorial.com/tutorials/11-adding-will_paginate-to-your-model-for-rails-pagination</loc>
@@ -67,6 +67,18 @@
   <loc>http://www.ytutorial.com/tutorials/10-google-analytics-in-rails</loc>
 </url>
 <url>
+  <loc>http://www.ytutorial.com/tutorials/19-find-out-which-app-domain-name-you-are-using-on-heroku</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/20-fatfreecrm-free-crm-built-in-ruby-on-rails</loc>
+</url>
+<url>
   <loc>http://www.ytutorial.com/tutorials/14-rails-scaffold-for-beginners-all-code-snippets-are-done-in-the-command-line</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/21-simple-nokogiri-tutorial-for-web-scraping-in-rails</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/22-save-rails-output-to-a-file-i-e-store-puts-value-instead-of-printing-to-console</loc>
 </url>
 </urlset>
