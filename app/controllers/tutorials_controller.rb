@@ -5,7 +5,7 @@ class TutorialsController < ApplicationController
   
   def index
     @tutorials = Tutorial.all
-    @tutorials = Tutorial.paginate(:page => params[:page], :per_page => 5)
+    @tutorials = Tutorial.paginate(:page => params[:page], :per_page => 8, :order => 'id DESC')
   end
   
   def show

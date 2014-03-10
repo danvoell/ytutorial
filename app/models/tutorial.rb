@@ -10,7 +10,7 @@ class Tutorial < ActiveRecord::Base
   acts_as_taggable
   
 has_reputation :votes, source: :user, aggregated_by: :sum
-  
+
   def editor?(edit_user)
     self.user_id == edit_user.id || edit_user.admin?
   end
