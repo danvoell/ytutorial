@@ -18,8 +18,7 @@
 <td>
 
   <ul class="fa-ul">
-  <li><i class="fa-li fa fa-check-square"></i><%= tutorial.reputation_for(:votes).to_i %></li>
-  <li><i class="fa-li fa fa-list-alt"></i><%= tutorial.steps.count %></li>
+  <li><i class="fa-li fa fa-thumbs-up"></i><%= tutorial.reputation_for(:votes).to_i %></li>
 </ul>
 
 
@@ -30,7 +29,7 @@
 </div>
 <div class="shortdescription"><%= raw(truncate(tutorial.outline.html_safe, length: 200)) %></div>
 <div class="userandpost">
- By <%= tutorial.user.username %> <!--(Guided <b><%= tutorial.user.reputation_for(:user_votes).to_i %> coders </b>to safety)--> | <%="#{time_ago_in_words(tutorial.created_at)} ago" %></div>
+ By <%= tutorial.user.username %> <!--(Guided <b><%= tutorial.user.reputation_for(:user_votes).to_i %> coders </b>to safety)--> | <%="#{time_ago_in_words(tutorial.created_at)} ago" %> | <%= tutorial.steps.count %> steps</div>
 
    <!-- Tags: <% tutorial.tags.any? %>
   <% tutorial.tags.each do |tag| %>
