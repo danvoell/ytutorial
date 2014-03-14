@@ -17,13 +17,10 @@
 <div class="details">
 <td>
 
-  <div class="stepcount" align="center">
-<%= tutorial.steps.count %><br><small>steps</small></div></td>
-
- <td>
-
-<div class="stepcomplete" align="center">
-<%= tutorial.reputation_for(:votes).to_i %><br><small>coded</small></div></td>
+  <ul class="fa-ul">
+  <li><i class="fa-li fa fa-check-square"></i><%= tutorial.reputation_for(:votes).to_i %></li>
+  <li><i class="fa-li fa fa-list-alt"></i><%= tutorial.steps.count %></li>
+</ul>
 
 
 <td>
