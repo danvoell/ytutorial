@@ -24,6 +24,7 @@
 //= require prettify
 //= require main.js
 
+
 function get_date(){
   var d = new Date();
   var date_string = "" + d.getFullYear().toString() + "-";
