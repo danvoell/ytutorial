@@ -14,7 +14,7 @@
 <% end %> -->
 
 <br><b>Successfully Completed By: </b><%= pluralize @tutorial.reputation_for(:votes).to_i, "folk" %><br>
-<b>Tutorial By:</b> <%= link_to @tutorial.user.username %>
+<b>Tutorial By:</b> <%= link_to @tutorial.user.username, @tutorial.user %>
     
 
 </div>
