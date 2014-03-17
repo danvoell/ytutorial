@@ -16,23 +16,20 @@
 
 <div class="details">
 <td>
-  <div class="stepcount" align="center">
-<%= tutorial.steps.count %><br><small>steps</small></div></td>
 
- <td>
-
-<div class="stepcomplete" align="center">
-<%= tutorial.reputation_for(:votes).to_i %><br><small>coded</small></div></td>
+  <ul class="fa-ul">
+  <li><i class="fa-li fa fa-thumbs-up"></i><%= tutorial.reputation_for(:votes).to_i %></li>
+</ul>
 
 
 <td>
-  <h3><%= link_to truncate(tutorial.title, length: 45), tutorial_path(tutorial) %>
+  <h3><%= link_to truncate(tutorial.title, length: 65), tutorial_path(tutorial) %>
 
 </h3>
 </div>
 <div class="shortdescription"><%= raw(truncate(tutorial.outline.html_safe, length: 200)) %></div>
 <div class="userandpost">
- By <%= tutorial.user.username %> <!--(Guided <b><%= tutorial.user.reputation_for(:user_votes).to_i %> coders </b>to safety)--> | <%="#{time_ago_in_words(tutorial.created_at)} ago" %></div>
+ By <%= tutorial.user.username %> <!--(Guided <b><%= tutorial.user.reputation_for(:user_votes).to_i %> coders </b>to safety)--> | <%="#{time_ago_in_words(tutorial.created_at)} ago" %> | <%= tutorial.steps.count %> steps</div>
 
    <!-- Tags: <% tutorial.tags.any? %>
   <% tutorial.tags.each do |tag| %>
@@ -51,8 +48,8 @@
 </div>
   <div class="span3">
     <div class="wellcomplete" align="center">
-    <h4>About</h4>
-    Community of rails developers teaching each other to code. </div>
+    <h4>About YTutorial</h4>
+    We are a community of rails developers teaching each other to code. This is an <a href="https://github.com/danvoell/ytutorial">open source project on github</a>. Please help our community get smarter, make a tutorial today<br><br>  <%= link_to "Make Your Own Tutorial", new_tutorial_path, :class => "btn btn-success" %> <br><br></div>
 
 <script>
   (function() {

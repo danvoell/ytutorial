@@ -9,6 +9,7 @@ class TutorialsController < ApplicationController
   end
   
   def show
+    # @tutorial = current_user.find.all
   end
   
   def new

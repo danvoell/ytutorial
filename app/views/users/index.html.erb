@@ -1,0 +1,5 @@
+<%= @user.all %>
+
+<li><%= link_to "Profile", @user %></li>
+<li><%= link_to "Settings", edit_user_registration_path %></li>
+<li><%= link_to "Logout", destroy_user_session_path, method: "delete" %></li>

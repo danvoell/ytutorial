@@ -16,19 +16,28 @@
   <loc>http://www.ytutorial.com/users/sign_up</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/12-seo-friendly-url-helper-for-rails</loc>
+  <loc>http://www.ytutorial.com/tutorials/29-display-most-recent-post-in-rails</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/1-delete-database-in-heroku-and-start-over</loc>
+  <loc>http://www.ytutorial.com/tutorials/28-save-referring-url-and-landing-url-in-rails-using-devise</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/7-adding-font-awesome-to-a-rails-project</loc>
+  <loc>http://www.ytutorial.com/tutorials/27-twitter-bootstrap-tutorial-beginner-from-0-to-span3</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/4-twitter-style-posted-x-days-ago-in-rails</loc>
+  <loc>http://www.ytutorial.com/tutorials/26-font-awesome-rails-a-simple-beginner-tutorial</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/3-redirect-your-domain-from-godaddy-to-heroku</loc>
+  <loc>http://www.ytutorial.com/tutorials/25-run-a-ruby-file-without-rails</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/24-creating-a-rails-project-from-scratch-beginner-rails-tutorial</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/23-scrape-google-search-result-urls-with-rails-and-nokogiri</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/22-save-rails-output-to-a-file-i-e-store-puts-value-instead-of-printing-to-console</loc>
 </url>
 <url>
   <loc>http://www.ytutorial.com/?page=2</loc>
@@ -37,28 +46,25 @@
   <loc>http://www.ytutorial.com/?page=3</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/?page=4</loc>
-</url>
-<url>
   <loc>http://www.ytutorial.com/users/password/new</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/8-back-end-admin-for-rails-application</loc>
+  <loc>http://www.ytutorial.com/tutorials/www.ytutorial.com</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/9-check-your-devise-user-database-table-in-heroku</loc>
+  <loc>http://www.ytutorial.com/tutorials/21-simple-nokogiri-tutorial-for-web-scraping-in-rails</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/5-twitter-automation-via-command-line</loc>
+  <loc>http://www.ytutorial.com/tutorials/20-fatfreecrm-free-crm-built-in-ruby-on-rails</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/2-rails-referral-affiliate-tracking</loc>
+  <loc>http://www.ytutorial.com/tutorials/19-find-out-which-app-domain-name-you-are-using-on-heroku</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/6-limit-amount-of-characters-in-view</loc>
+  <loc>http://www.ytutorial.com/tutorials/14-rails-scaffold-for-beginners-all-code-snippets-are-done-in-the-command-line</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/?page=1</loc>
+  <loc>http://www.ytutorial.com/tutorials/12-seo-friendly-url-helper-for-rails</loc>
 </url>
 <url>
   <loc>http://www.ytutorial.com/tutorials/11-adding-will_paginate-to-your-model-for-rails-pagination</loc>
@@ -67,18 +73,33 @@
   <loc>http://www.ytutorial.com/tutorials/10-google-analytics-in-rails</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/19-find-out-which-app-domain-name-you-are-using-on-heroku</loc>
+  <loc>http://www.ytutorial.com/tutorials/9-check-your-devise-user-database-table-in-heroku</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/20-fatfreecrm-free-crm-built-in-ruby-on-rails</loc>
+  <loc>http://www.ytutorial.com/?page=1</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/14-rails-scaffold-for-beginners-all-code-snippets-are-done-in-the-command-line</loc>
+  <loc>http://www.ytutorial.com/tutorials/8-back-end-admin-for-rails-application</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/21-simple-nokogiri-tutorial-for-web-scraping-in-rails</loc>
+  <loc>http://www.ytutorial.com/tutorials/7-adding-font-awesome-to-a-rails-project</loc>
 </url>
 <url>
-  <loc>http://www.ytutorial.com/tutorials/22-save-rails-output-to-a-file-i-e-store-puts-value-instead-of-printing-to-console</loc>
+  <loc>http://www.ytutorial.com/tutorials/6-limit-amount-of-characters-in-view</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/5-twitter-automation-via-command-line</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/4-twitter-style-posted-x-days-ago-in-rails</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/3-redirect-your-domain-from-godaddy-to-heroku</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/2-rails-referral-affiliate-tracking</loc>
+</url>
+<url>
+  <loc>http://www.ytutorial.com/tutorials/1-delete-database-in-heroku-and-start-over</loc>
 </url>
 </urlset>

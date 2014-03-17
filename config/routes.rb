@@ -8,7 +8,12 @@ Refectory::Application.routes.draw do
   end
   root :to => 'tutorials#index'
  
-devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
+devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' 
+resources :users
+get 'users/:id' => 'users#show'
+end
+
+
  
   resources :tutorials
   resources :comments, only: [:show, :create, :update, :destroy]
