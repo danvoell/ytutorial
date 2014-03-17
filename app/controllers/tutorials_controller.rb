@@ -9,7 +9,7 @@ class TutorialsController < ApplicationController
   end
   
   def show
-    # @tutorial = current_user.find.all
+    @tutorial = Tutorial.find(params[:id])
   end
   
   def new

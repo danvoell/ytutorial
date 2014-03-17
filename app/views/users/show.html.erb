@@ -1,10 +1,14 @@
 
 
 <h1><%= @user.username %></h1>
-<h5><%= @user.tutorials %></h5>
+<!-- <h5><%= @user.tutorials %></h5> -->
 <p> This user has authored <%= @user.tutorials.count %> tutorials!</p>
 
 
-
+<ul>
+<% @tutorials.each do |tutorial| %>
+  <li><%= link_to tutorial.title, tutorial_path(tutorial) %></li>
+<% end %>
+</ul>
 
 
