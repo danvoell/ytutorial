@@ -5,17 +5,13 @@ Refectory::Application.routes.draw do
     get 'logout', to: "devise/sessions#destroy", as: "logout"
     get 'logout', to: "users/sessions#destroy", as: "logout"
     get 'signup', to: "users#new", as: "signup"
-    match '/users/:id', :to => 'users#show', :as => :user
+    # match '/users/:id', :to => 'users#show', :as => :user
   end
   root :to => 'tutorials#index'
  
 devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' 
-resources :users
 get 'users/:id' => 'users#show'
 end
-
-
- 
   resources :tutorials
   resources :comments, only: [:show, :create, :update, :destroy]
  
