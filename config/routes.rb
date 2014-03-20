@@ -12,6 +12,7 @@ Refectory::Application.routes.draw do
 devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' 
 get 'users/:id' => 'users#show'
 end
+  resources :users
   resources :tutorials
   resources :comments, only: [:show, :create, :update, :destroy]
  
