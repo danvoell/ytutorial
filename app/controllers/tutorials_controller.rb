@@ -5,8 +5,15 @@ class TutorialsController < ApplicationController
   
   def index
     @tutorials = Tutorial.all
+    @search = params[:search]  
+    @searchtutorials = Tutorial.search(@search)  
+    # @tutorials = Tutorial.search(params[:search])
     @tutorials = Tutorial.paginate(:page => params[:page], :per_page => 8, :order => 'id DESC')
-  end
+end
+
+def search
+  @tutorials = Tutorial.search params[:search]
+end
   
   def show
     @tutorial = Tutorial.find(params[:id])
@@ -14,6 +21,8 @@ class TutorialsController < ApplicationController
   
   def new
     @tutorial = Tutorial.new
+    @search = params[:search]  
+    @tutorials = Tutorial.search(@search) 
   end
   
 def tagged
@@ -69,6 +78,7 @@ end
     @tutorial.destroy
     redirect_to tutorials_path, notice: "Tutorial deleted."
   end
+
   
   private
     def find_tutorial

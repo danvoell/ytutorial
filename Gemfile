@@ -15,6 +15,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'less-rails-bootstrap'
 gem 'bootstrap-will_paginate'
 gem 'acts-as-taggable-on', '~> 2.3.1'
+gem "searchkick"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

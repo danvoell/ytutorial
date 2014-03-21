@@ -3,14 +3,15 @@
 <div class="row">
   <div class="span9">
 <table class="table table-striped">
+
+
   
 
 <% @tutorials.each do |tutorial| %>
 
-
     <tr>
 
-    
+  
 
 <!--<td><%= image_tag tutorial.image_url(:thumb) if tutorial.image? %></td>      -->
 
@@ -49,7 +50,23 @@
   <div class="span3">
     <div class="wellcomplete" align="center">
     <h4>About YTutorial</h4>
-    We are a community of rails developers teaching each other to code. This is an <a href="https://github.com/danvoell/ytutorial">open source project on github</a>. Please help our community get smarter, make a tutorial today<br><br>  <%= link_to "Make Your Own Tutorial", new_tutorial_path, :class => "btn btn-success" %> <br><br></div>
+    We are a community of rails developers teaching each other to code. This is an <a href="https://github.com/danvoell/ytutorial">open source project on github</a>. Please help our community get smarter, make a tutorial today<br><br>  <%= link_to "Make Your Own Tutorial", new_tutorial_path, :class => "btn btn-success" %> <br><br>
+    <div id="search">
+          <%= form_tag tutorials_path, :method => 'get' do %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search", :name => nil, :class => "btn btn-success" %>
+         </p>
+        <% end %>
+
+    <% @searchtutorials.each do |tutorial| %>
+<li><%= link_to tutorial.title, tutorial_path(tutorial) %></li>
+<% end %>
+      
+
+      </div>
+
+  </div>
 
 <script>
   (function() {
